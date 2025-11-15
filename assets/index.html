@@ -6,100 +6,74 @@
     <title>Huggy Toys</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- ВСПЛЫВАЮЩЕЕ ОКНО -->
-    <div id="popup">
-        <h3>Добро пожаловать в наш магазин Huggy Toys!</h3>
-        <button onclick="closePopup()">Жабу</button>
-    </div>
+    <!-- Смайлики по углам -->
+    <div class="smiley corner tl">🌸</div>
+    <div class="smiley corner tl">🐻</div>
+    <div class="smiley corner tl">☁️</div>
 
-    <!-- СМАЙЛИКИ 3 ШТУКИ В КАЖДОМ УГЛУ -->
-    <div class="emoji-set top-left">🌸 🐻 ☁️</div>
-    <div class="emoji-set top-right">🐻 ☁️ 🌸</div>
-    <div class="emoji-set bottom-left">☁️ 🌸 🐻</div>
-    <div class="emoji-set bottom-right">🌸 ☁️ 🐻</div>
+    <div class="smiley corner tr">🌸</div>
+    <div class="smiley corner tr">🐻</div>
+    <div class="smiley corner tr">☁️</div>
 
-    <!-- МЕНЮ -->
+    <div class="smiley corner bl">🌸</div>
+    <div class="smiley corner bl">🐻</div>
+    <div class="smiley corner bl">☁️</div>
+
+    <div class="smiley corner br">🌸</div>
+    <div class="smiley corner br">🐻</div>
+    <div class="smiley corner br">☁️</div>
+
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Басты бет</a></li>
-                <li><a href="#products">Өнімдер</a></li>
-                <li><a href="#contact">Байланыс</a></li>
+                <li><button class="nav-btn active" data-section="home">Басты бет</button></li>
+                <li><button class="nav-btn" data-section="products">Өнімдер</button></li>
+                <li><button class="nav-btn" data-section="contact">Байланыс</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Главная -->
+
         <section id="home">
-            <h2>HUGGY TOYS</h2>
-            <p>
+            <h1>Huggy Toys</h1>
+
+            <p class="description">
                 Біздің дүкенде сіз барлық жастағы адамдарға арналған жұмсақ ойыншықтарды таба аласыз. 
-                Біз әр түрлі сапалы, әдемі және қауіпсіз ойыншықтар ұсынамыз, олар балаларға қуаныш 
-                сыйлайды және үйге жылулық пен жайлылық қосады. Әрбір ойыншық — махаббатпен және 
-                ерекше көңілмен жасалған!
+                Біз әр түрлі сапалы, әдемі және қауіпсіз ойыншықтар ұсынамыз, 
+                олар балаларға қуаныш сыйлайды және үйге жылулық пен жайлылық қосады. 
+                Әрбір ойыншық - махаббатпен және ерекше көңілмен жасалған!
             </p>
         </section>
 
-        <!-- Категории -->
         <section id="products">
-            <h2 class="center">Өнімдер</h2>
-
+            <h2>Категории игрушек</h2>
             <div class="categories">
-                <div class="category" onclick="showCategoryInfo('multy')">Мультфильм кейіпкерлері</div>
-                <div class="category" onclick="showCategoryInfo('anime')">Аниме кейіпкерлері</div>
-                <div class="category" onclick="showCategoryInfo('films')">Фильмдер бойынша</div>
-                <div class="category" onclick="showCategoryInfo('our')">Біздің дизайндар</div>
-                <div class="category" onclick="showCategoryInfo('classic')">Классикалық ойыншықтар</div>
-                <div class="category" onclick="showCategoryInfo('animals')">Жануарлар</div>
-            </div>
-
-            <div class="category-info" id="categoryInfo">
-                Мәзірден категорияны таңдаңыз, ақпарат осы жерде шығады.
+                <div class="category">Мультфильмы</div>
+                <div class="category">Ваши дизайны</div>
+                <div class="category">Фильмы</div>
+                <div class="category">Наши игрушки</div>
+                <div class="category">Аниме</div>
+                <div class="category">Плюшевые</div>
             </div>
         </section>
 
-        <!-- Контакты -->
         <section id="contact">
-            <h2 class="center">Байланыс</h2>
-            <p class="center">Телефон: +7 771 777 9450</p>
-            <p class="center">Мекен-жай: Сатпаева 52, Астана</p>
+            <h2>Байланыс</h2>
+            <p>Телефон: 87717779450</p>
+            <p>Адрес: Сатпаева 52, Астана</p>
         </section>
+
     </main>
 
     <footer>
-        Фирма Huggy Toys © 2025
+        <p>Фирма Huggy Toys © 2025, Астана</p>
     </footer>
 
-    <!-- JAVASCRIPT -->
-    <script>
-        // Показ окна при загрузке
-        window.onload = function () {
-            document.getElementById("popup").style.display = "block";
-        };
+    <button class="scroll-up" onclick="window.scrollTo({top: 0, behavior:'smooth'})">↑</button>
 
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-        }
-
-        function showCategoryInfo(category) {
-            const info = document.getElementById('categoryInfo');
-
-            const texts = {
-                multy: '<b>Мультфильм кейіпкерлері:</b> Disney, Смешарики және басқа сүйікті кейіпкерлер. 🌸',
-                anime: '<b>Аниме кейіпкерлері:</b> Naruto, Pokemon және тағы басқалары. 🐻',
-                films: '<b>Фильмдер бойынша:</b> Marvel, Star Wars және фильм кейіпкерлері. ☁️',
-                our: '<b>Біздің дизайндар:</b> Өзіміз жасаған ерекше ойыншықтар. 🌸',
-                classic: '<b>Классикалық ойыншықтар:</b> Традициялық жұмсақ ойыншықтар. 🐻',
-                animals: '<b>Жануарлар:</b> Түрлі көлемдегі жануарлар. ☁️'
-            };
-
-            info.innerHTML = texts[category] || 'Мәзірден категорияны таңдаңыз.';
-        }
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
