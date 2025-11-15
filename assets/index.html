@@ -1,165 +1,154 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-    <meta charset="UTF-8">
-    <title>Ою-Аю | Балаларға арналған ойыншықтар дүкені</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background: #fef9f3;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background: linear-gradient(90deg, #a2d2ff, #ffd6e0, #fff1a8);
-            padding: 30px 20px;
-            text-align: center;
-            font-size: 50px;
-            font-weight: bold;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        header p {
-            font-size: 20px;
-            margin: 5px 0 0 0;
-        }
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            background: #ffd6e0;
-            position: sticky;
-            top: 100px;
-            z-index: 9;
-        }
-        nav button {
-            padding: 18px 28px;
-            margin: 8px;
-            border: none;
-            background-color: #a2d2ff;
-            color: #fff;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 15px;
-            transition: 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        nav button:hover {
-            background-color: #ffb3c1;
-        }
-        nav button.active {
-            background-color: #ff6f91;
-        }
-        section {
-            display: none;
-            padding: 30px;
-        }
-        section.active {
-            display: block;
-        }
-        .toy-category {
-            margin-bottom: 30px;
-        }
-        .toy-category h2 {
-            color: #ff6f91;
-            border-bottom: 3px dashed #a2d2ff;
-            padding-bottom: 10px;
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-        ul.toy-list {
-            list-style: none;
-            padding: 0;
-        }
-        ul.toy-list li {
-            background: #f0f8ff;
-            margin: 12px 0;
-            padding: 15px 20px;
-            border-radius: 15px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        ul.toy-list li button {
-            padding: 8px 12px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            background-color: #a2d2ff;
-            color: #fff;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-        ul.toy-list li button:hover {
-            background-color: #ff6f91;
-        }
-        .cart {
-            position: fixed;
-            top: 150px;
-            right: 20px;
-            background: #ffd6e0;
-            padding: 15px;
-            border-radius: 15px;
-            width: 300px;
-            max-height: 400px;
-            overflow-y: auto;
-            display: none;
-            z-index: 100;
-        }
-        .cart h3 {
-            margin-top: 0;
-            font-size: 20px;
-        }
-        .cart ul {
-            list-style: none;
-            padding: 0;
-        }
-        .cart ul li {
-            display: flex;
-            justify-content: space-between;
-            padding: 5px 0;
-            border-bottom: 1px dashed #a2d2ff;
-        }
-        .cart button {
-            width: 100%;
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #a2d2ff;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .scroll-btn {
-            position: fixed;
-            right: 20px;
-            background: #ffb3c1;
-            color: #fff;
-            border: none;
-            padding: 15px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 22px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-            transition: transform 0.2s, background 0.3s;
-            z-index: 100;
-        }
-        #scrollTop { bottom: 70px; }
-        #scrollBottom { bottom: 20px; }
-        footer {
-            text-align: center;
-            background: #ffd6e0;
-            padding: 20px 10px;
-            font-size: 20px;
-            color: #333;
-            font-weight: bold;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Ою-Аю | Балаларға арналған ойыншықтар дүкені</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background: #fef9f3;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background: linear-gradient(90deg, #a2d2ff, #ffd6e0, #fff1a8);
+        padding: 30px 20px;
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    header p {
+        font-size: 20px;
+        margin: 5px 0 0 0;
+    }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background: #ffd6e0;
+        position: sticky;
+        top: 100px;
+        z-index: 9;
+    }
+    nav button {
+        padding: 18px 28px;
+        margin: 8px;
+        border: none;
+        background-color: #a2d2ff;
+        color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+        border-radius: 15px;
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    nav button:hover { background-color: #ffb3c1; }
+    nav button.active { background-color: #ff6f91; }
+    section { display: none; padding: 30px; }
+    section.active { display: block; }
+    .toy-category { margin-bottom: 30px; }
+    .toy-category h2 {
+        color: #ff6f91;
+        border-bottom: 3px dashed #a2d2ff;
+        padding-bottom: 10px;
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    ul.toy-list { list-style: none; padding: 0; }
+    ul.toy-list li {
+        background: #f0f8ff;
+        margin: 12px 0;
+        padding: 15px 20px;
+        border-radius: 15px;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    ul.toy-list li button {
+        padding: 8px 12px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        background-color: #a2d2ff;
+        color: #fff;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+    ul.toy-list li button:hover { background-color: #ff6f91; }
+    @keyframes addToCart {
+        0% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.3); opacity: 0.7; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+    ul.toy-list li.added { animation: addToCart 0.5s ease; }
+    .cart {
+        position: fixed;
+        top: 120px;
+        right: 20px;
+        width: 280px;
+        background: #fff1a8;
+        border-radius: 15px;
+        padding: 15px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        max-height: 400px;
+        overflow-y: auto;
+        z-index: 100;
+        display: none;
+        transition: all 0.3s ease;
+    }
+    .cart h3 {
+        text-align: center;
+        margin-top: 0;
+        font-size: 22px;
+        color: #ff6f91;
+    }
+    .cart ul li {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+        border-bottom: 1px dashed #a2d2ff;
+        font-size: 16px;
+        color: #333;
+    }
+    .cart button {
+        margin-top: 10px;
+        width: 100%;
+        background-color: #a2d2ff;
+        color: #fff;
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .cart button:hover { background-color: #ff6f91; }
+    #totalPrice {
+        font-weight: bold;
+        font-size: 18px;
+        margin-top: 15px;
+        color: #0077b6;
+    }
+    @media (max-width: 768px) {
+        nav button { font-size: 16px; padding: 12px 18px; margin: 5px; }
+        .cart { width: 90%; right: 5%; }
+        .toy-category h2 { font-size: 24px; }
+    }
+    .order-form input {
+        width: 100%;
+        padding: 10px;
+        margin: 6px 0 12px 0;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+</style>
 </head>
 <body>
 
@@ -175,7 +164,6 @@
     <button class="tab-btn" data-tab="order">🛒 Тапсырыс беру</button>
 </nav>
 
-<!-- Тауарлар -->
 <section id="babies" class="active">
     <div class="toy-category">
         <h2>Балаларға арналған ойыншықтар (0-3 жас)</h2>
@@ -183,6 +171,10 @@
             <li data-name="Мягкая плюшевая игрушка" data-price="1200">🧸 Мягкая плюшевая игрушка <span>1200₸</span> <button>➕ Сатып алу</button></li>
             <li data-name="Погремушка" data-price="800">🔔 Погремушка <span>800₸</span> <button>➕ Сатып алу</button></li>
             <li data-name="Светящийся мячик" data-price="1500">✨ Светящийся мячик <span>1500₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Мягкий зайчик" data-price="1100">🐰 Мягкий зайчик <span>1100₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Развивающая книжка" data-price="900">📚 Развивающая книжка <span>900₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Кубики" data-price="1300">🟦 Кубики <span>1300₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Музыкальная игрушка" data-price="1600">🎵 Музыкальная игрушка <span>1600₸</span> <button>➕ Сатып алу</button></li>
         </ul>
     </div>
 </section>
@@ -193,6 +185,11 @@
         <ul class="toy-list">
             <li data-name="Конструктор LEGO Duplo" data-price="3500">🧱 Конструктор LEGO Duplo <span>3500₸</span> <button>➕ Сатып алу</button></li>
             <li data-name="Настольная игра" data-price="2500">🎲 Настольная игра <span>2500₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Машинка на пульте" data-price="2800">🚗 Машинка на пульте <span>2800₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Кукла" data-price="3200">🪆 Кукла <span>3200₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Пазл" data-price="1800">🧩 Пазл <span>1800₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Робот трансформер" data-price="4000">🤖 Робот трансформер <span>4000₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Скейтборд мини" data-price="2900">🛹 Скейтборд мини <span>2900₸</span> <button>➕ Сатып алу</button></li>
         </ul>
     </div>
 </section>
@@ -202,7 +199,12 @@
         <h2>Үлкен балаларға / Күрделі ойыншықтар (8+)</h2>
         <ul class="toy-list">
             <li data-name="3D пазл" data-price="5200">🧩 3D пазл <span>5200₸</span> <button>➕ Сатып алу</button></li>
-            <li data-name="Механикалық робот жинағы" data-price="6700">🤖 Механикалық робот жинағы <span>6700₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Механический робот" data-price="6700">🤖 Механикалық робот жинағы <span>6700₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Дрон" data-price="15000">🛸 Дрон <span>15000₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Настольная игра сложная" data-price="4800">🎲 Настольная игра сложная <span>4800₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Радиоуправляемый автомобиль" data-price="9200">🚗 Радиоуправляемый автомобиль <span>9200₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Конструктор робот" data-price="7100">🛠️ Конструктор робот <span>7100₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Летающий робот" data-price="14000">🤖 Летающий робот <span>14000₸</span> <button>➕ Сатып алу</button></li>
         </ul>
     </div>
 </section>
@@ -212,25 +214,24 @@
         <h2>🛒 Тапсырыс беру</h2>
         <label>Аты-жөніңіз:</label>
         <input type="text" id="name" placeholder="Аты-жөніңіз">
-        
+
         <label>Мекен-жайыңыз:</label>
         <input type="text" id="address" placeholder="Мекен-жай">
-        
+
+        <label>Номер банк картасы:</label>
+        <input type="text" id="cardNumber" placeholder="xxxx xxxx xxxx xxxx" maxlength="19">
+
         <p id="totalPrice">Жалпы сома: 0₸</p>
-        <button onclick="alert('Сіздің тапсырысыңыз қабылданды!')">Тапсырыс беру</button>
+        <button>Тапсырыс беру</button>
     </div>
 </section>
 
-<!-- Корзина -->
 <div class="cart" id="cart">
     <h3>🛒 Корзина</h3>
     <ul id="cartItems"></ul>
     <p id="cartTotal">Жалпы: 0₸</p>
     <button onclick="toggleCart()">Жабу</button>
 </div>
-
-<button class="scroll-btn" id="scrollTop" onclick="scrollToTop()">↑</button>
-<button class="scroll-btn" id="scrollBottom" onclick="scrollToBottom()">↓</button>
 
 <footer>
     📞 +7 747 330 34 40 | 📞 +7 705 557 9450
@@ -239,7 +240,6 @@
 <script>
 const tabs = document.querySelectorAll('.tab-btn');
 const sections = document.querySelectorAll('section');
-
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
@@ -250,14 +250,11 @@ tabs.forEach(tab => {
     });
 });
 
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-function scrollToBottom() {
-    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+function toggleCart() {
+    const cartDiv = document.getElementById('cart');
+    cartDiv.style.display = cartDiv.style.display === 'block' ? 'none' : 'block';
 }
 
-// Корзина логикасы
 let cart = [];
 function updateCart() {
     const cartItems = document.getElementById('cartItems');
@@ -266,7 +263,7 @@ function updateCart() {
     let total = 0;
     cart.forEach(item => {
         const li = document.createElement('li');
-        li.textContent = `${item.name} - ${item.price}₸`;
+        li.textContent = `${item.name} - ${item.price}₸ (${item.delivery})`;
         cartItems.appendChild(li);
         total += item.price;
     });
@@ -274,24 +271,35 @@ function updateCart() {
     document.getElementById('totalPrice').textContent = `Жалпы сома: ${total}₸`;
 }
 
-function toggleCart() {
-    const cartDiv = document.getElementById('cart');
-    cartDiv.style.display = cartDiv.style.display === 'block' ? 'none' : 'block';
-}
-
-// Тауарларды сатып алу
 document.querySelectorAll('.toy-list li button').forEach(btn => {
     btn.addEventListener('click', (e) => {
         const li = e.target.parentElement;
         const name = li.dataset.name;
         const price = parseInt(li.dataset.price);
-        cart.push({name, price});
+
+        li.classList.add('added');
+        setTimeout(() => li.classList.remove('added'), 500);
+
+        cart.push({name, price, delivery: '5-10 күн ішінде'});
         updateCart();
         document.getElementById('cart').style.display = 'block';
     });
+});
+
+document.querySelector('#order button').addEventListener('click', () => {
+    const name = document.getElementById('name').value;
+    const address = document.getElementById('address').value;
+    const card = document.getElementById('cardNumber').value;
+    const total = document.getElementById('totalPrice').textContent;
+
+    if(!name || !address || !card) {
+        alert('Барлық өрістерді толтырыңыз!');
+        return;
+    }
+
+    alert(`Сіздің тапсырысыңыз қабылданды!\n${total}\nМекен-жай: ${address}\nКарта нөмірі: ${card}`);
 });
 </script>
 
 </body>
 </html>
-
