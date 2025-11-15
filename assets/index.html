@@ -2,78 +2,298 @@
 <html lang="kk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huggy Toys</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Балаларға арналған ойыншықтар дүкені</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #fef9f3;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(90deg, #a2d2ff, #ffd6e0, #fff1a8);
+            padding: 30px 20px;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        header p {
+            font-size: 18px;
+            margin: 5px 0 0 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #ffd6e0;
+            position: sticky;
+            top: 100px;
+            z-index: 9;
+        }
+        nav button {
+            padding: 10px 18px;
+            margin: 5px;
+            border: none;
+            background-color: #a2d2ff;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 8px 8px 0 0;
+            transition: 0.3s;
+        }
+        nav button:hover {
+            background-color: #ffb3c1;
+        }
+        nav button.active {
+            background-color: #ff6f91;
+        }
+        section {
+            display: none;
+            padding: 30px;
+        }
+        section.active {
+            display: block;
+        }
+        .toy-category {
+            margin-bottom: 30px;
+        }
+        .toy-category h2 {
+            color: #ff6f91;
+            border-bottom: 2px dashed #a2d2ff;
+            padding-bottom: 5px;
+        }
+        ul.toy-list {
+            list-style: none;
+            padding: 0;
+        }
+        ul.toy-list li {
+            background: #f0f8ff;
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 10px;
+        }
+        ul.toy-list li h3 {
+            margin: 0 0 5px 0;
+            color: #0077b6;
+        }
+        ul.toy-list li p {
+            margin: 0 0 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+        ul.toy-list li span {
+            font-weight: bold;
+            color: #ff3c38;
+        }
+        .order-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff1a8;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .order-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .order-form input, .order-form select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+        }
+        .order-form button {
+            background: #a2d2ff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .scroll-btn {
+            position: fixed;
+            right: 20px;
+            background: #ffb3c1;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            margin: 5px;
+            z-index: 100;
+        }
+        #scrollTop { bottom: 70px; }
+        #scrollBottom { bottom: 20px; }
+    </style>
 </head>
 <body>
 
-    <!-- Смайлики по углам -->
-    <div class="smiley corner tl">🌸</div>
-    <div class="smiley corner tl">🐻</div>
-    <div class="smiley corner tl">☁️</div>
+<header>
+    Балаларға арналған ойыншықтар дүкені
+    <p>Көмек немесе тапсырыс үшін: 747 330 34 40</p>
+</header>
 
-    <div class="smiley corner tr">🌸</div>
-    <div class="smiley corner tr">🐻</div>
-    <div class="smiley corner tr">☁️</div>
+<nav>
+    <button class="tab-btn active" data-tab="babies">Кіші жастағы</button>
+    <button class="tab-btn" data-tab="middle">Орта жастағы</button>
+    <button class="tab-btn" data-tab="older">Үлкендер / Күрделі</button>
+    <button class="tab-btn" data-tab="order">Тапсырыс беру</button>
+</nav>
 
-    <div class="smiley corner bl">🌸</div>
-    <div class="smiley corner bl">🐻</div>
-    <div class="smiley corner bl">☁️</div>
+<section id="babies" class="active">
+    <div class="toy-category">
+        <h2>Балаларға арналған ойыншықтар (0-3 жас)</h2>
+        <ul class="toy-list">
+            <li>
+                <h3>Мягкая плюшевая игрушка</h3>
+                <p>Жұмсақ плюштан жасалған, кішкентай балаларға қауіпсіз</p>
+                <span>1200₸</span>
+            </li>
+            <li>
+                <h3>Погремушка</h3>
+                <p>Қолға ұстауға ыңғайлы, дыбыс шығаратын</p>
+                <span>800₸</span>
+            </li>
+            <li>
+                <h3>Светящийся мячик</h3>
+                <p>Жарық шығаратын, доп ойындарына арналған</p>
+                <span>1500₸</span>
+            </li>
+            <li>
+                <h3>Развивающий кубик</h3>
+                <p>Түстер мен фигураларды үйрететін кубик</p>
+                <span>1100₸</span>
+            </li>
+            <li>
+                <h3>Музыкальная игрушка</h3>
+                <p>Баланың музыкалық қабілетін дамытатын</p>
+                <span>1300₸</span>
+            </li>
+        </ul>
+    </div>
+</section>
 
-    <div class="smiley corner br">🌸</div>
-    <div class="smiley corner br">🐻</div>
-    <div class="smiley corner br">☁️</div>
+<section id="middle">
+    <div class="toy-category">
+        <h2>Орта жастағы балаларға (4-7 жас)</h2>
+        <ul class="toy-list">
+            <li>
+                <h3>Конструктор LEGO Duplo</h3>
+                <p>Түсін үйрететін, шығармашылықты дамытатын</p>
+                <span>3500₸</span>
+            </li>
+            <li>
+                <h3>Настольная игра</h3>
+                <p>Отбасылық ойын, логика мен стратегияны дамытады</p>
+                <span>2500₸</span>
+            </li>
+            <li>
+                <h3>Робот-трансформер</h3>
+                <p>Қолмен жинауға болатын робот</p>
+                <span>4500₸</span>
+            </li>
+            <li>
+                <h3>Кукла с аксессуарами</h3>
+                <p>Әдемі кукла, киімдерін ауыстыруға болады</p>
+                <span>3200₸</span>
+            </li>
+            <li>
+                <h3>Пазл 3D</h3>
+                <p>Үлкен бөліктері бар 3D пазл</p>
+                <span>3000₸</span>
+            </li>
+        </ul>
+    </div>
+</section>
 
-    <header>
-        <nav>
-            <ul>
-                <li><button class="nav-btn active" data-section="home">Басты бет</button></li>
-                <li><button class="nav-btn" data-section="products">Өнімдер</button></li>
-                <li><button class="nav-btn" data-section="contact">Байланыс</button></li>
-            </ul>
-        </nav>
-    </header>
+<section id="older">
+    <div class="toy-category">
+        <h2>Үлкен балаларға / Күрделі ойыншықтар (8+)</h2>
+        <ul class="toy-list">
+            <li>
+                <h3>3D пазл</h3>
+                <p>Күрделі 3D фигураларды жинау</p>
+                <span>5200₸</span>
+            </li>
+            <li>
+                <h3>Механикалық робот жинағы</h3>
+                <p>Механикалық бөліктерді өзіңіз жинайсыз</p>
+                <span>6700₸</span>
+            </li>
+            <li>
+                <h3>Электрондық конструктор</h3>
+                <p>Жарық пен қозғалысқа арналған электроника</p>
+                <span>8000₸</span>
+            </li>
+            <li>
+                <h3>Логикалық ойын жинағы</h3>
+                <p>Стратегия мен логиканы дамытатын ойын</p>
+                <span>5600₸</span>
+            </li>
+            <li>
+                <h3>Научный набор</h3>
+                <p>Балаларға арналған химия және физика тәжірибелері</p>
+                <span>7200₸</span>
+            </li>
+        </ul>
+    </div>
+</section>
 
-    <main>
+<section id="order">
+    <div class="order-form">
+        <h2>Тапсырыс беру</h2>
+        <label>Аты-жөніңіз:</label>
+        <input type="text" id="name" placeholder="Аты-жөніңіз">
+        
+        <label>Мекен-жайыңыз:</label>
+        <input type="text" id="address" placeholder="Мекен-жай">
+        
+        <label>Сатып алынған ойыншық сомасы (₸):</label>
+        <input type="number" id="price" placeholder="Мысалы, 4000">
+        
+        <p id="deliveryCost">Жеткізу бағасы: </p>
+        <button onclick="calculateDelivery()">Есептеу</button>
+    </div>
+</section>
 
-        <section id="home">
-            <h1>Huggy Toys</h1>
+<button class="scroll-btn" id="scrollTop" onclick="scrollToTop()">↑</button>
+<button class="scroll-btn" id="scrollBottom" onclick="scrollToBottom()">↓</button>
 
-            <p class="description">
-                Біздің дүкенде сіз барлық жастағы адамдарға арналған жұмсақ ойыншықтарды таба аласыз. 
-                Біз әр түрлі сапалы, әдемі және қауіпсіз ойыншықтар ұсынамыз, 
-                олар балаларға қуаныш сыйлайды және үйге жылулық пен жайлылық қосады. 
-                Әрбір ойыншық - махаббатпен және ерекше көңілмен жасалған!
-            </p>
-        </section>
+<script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const sections = document.querySelectorAll('section');
 
-        <section id="products">
-            <h2>Категории игрушек</h2>
-            <div class="categories">
-                <div class="category">Мультфильмы</div>
-                <div class="category">Ваши дизайны</div>
-                <div class="category">Фильмы</div>
-                <div class="category">Наши игрушки</div>
-                <div class="category">Аниме</div>
-                <div class="category">Плюшевые</div>
-            </div>
-        </section>
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            const target = tab.dataset.tab;
+            sections.forEach(sec => sec.classList.remove('active'));
+            document.getElementById(target).classList.add('active');
+        });
+    });
 
-        <section id="contact">
-            <h2>Байланыс</h2>
-            <p>Телефон: 87717779450</p>
-            <p>Адрес: Сатпаева 52, Астана</p>
-        </section>
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-    </main>
+    function scrollToBottom() {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
 
-    <footer>
-        <p>Фирма Huggy Toys © 2025, Астана</p>
-    </footer>
+    function calculateDelivery() {
+        const price = Number(document.getElementById('price').value);
+        let delivery = 0;
+        if (price < 5000) delivery = 1200;
+        else delivery = 700;
+        document.getElementById('deliveryCost').textContent = "Жеткізу бағасы: " + delivery + "₸";
+    }
+</script>
 
-    <button class="scroll-up" onclick="window.scrollTo({top: 0, behavior:'smooth'})">↑</button>
-
-    <script src="script.js"></script>
 </body>
 </html>
