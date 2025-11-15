@@ -1,110 +1,105 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Huggy Toys</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header { background: #f8b4d9; padding: 20px; text-align: center; }
-    nav { background: #ffd8ec; padding: 10px; text-align: center; }
-    nav a { margin: 0 15px; text-decoration: none; font-weight: bold; }
-    .hero { text-align: center; padding: 20px; }
-    .products img { width: 150px; margin: 10px; border-radius: 10px; }
-    .order-btn { display: inline-block; padding: 12px 20px; background: #ff6fb7; color: white; border-radius: 10px; text-decoration: none; font-size: 18px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huggy Toys</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <h1>Huggy Toys</h1>
-    <p>Ойыншық дүкені</p>
-  </header>
 
-  <nav>
-    <a href="index.html">Басты бет</a>
-    <a href="order.html">Заказ беру</a>
-    <a href="contacts.html">Контактілер</a>
-  </nav>
-
-  <section class="categories" style="text-align:center; padding:20px;">
-    <h2>Ойыншық категориялары</h2>
-    <div style="display:flex; justify-content:center; gap:20px; margin-top:20px;">
-      <a href="kids-small.html" class="cat" style="padding:15px 25px; background:#ffe3f4; border-radius:12px; text-decoration:none; font-size:18px;">Кішкентай балаларға</a>
-      <a href="kids-mid.html" class="cat" style="padding:15px 25px; background:#ffe3f4; border-radius:12px; text-decoration:none; font-size:18px;">Орта жастағыларға</a>
-      <a href="kids-big.html" class="cat" style="padding:15px 25px; background:#ffe3f4; border-radius:12px; text-decoration:none; font-size:18px;">Үлкен жастағы балаларға</a>
+    <!-- ВСПЛЫВАЮЩЕЕ ОКНО -->
+    <div id="popup">
+        <h3>Добро пожаловать в наш магазин Huggy Toys!</h3>
+        <button onclick="closePopup()">Жабу</button>
     </div>
-  </section>
 
-  <section class="hero">
-    <h2>Біздегі ойыншықтар</h2>
-    <div class="products">
-      <img src="toy1.jpg" alt="Toy 1" />
-      <img src="toy2.jpg" alt="Toy 2" />
-      <img src="toy3.jpg" alt="Toy 3" />
-    </div>
-    <p>Біздің көмек: 8 747 3630 34 40, +7 705 557 9450 (Алия)</p>
-    <a class="order-btn" href="order.html">🛒 Заказ беру</a>
-  </section>
+    <!-- СМАЙЛИКИ 3 ШТУКИ В КАЖДОМ УГЛУ -->
+    <div class="emoji-set top-left">🌸 🐻 ☁️</div>
+    <div class="emoji-set top-right">🐻 ☁️ 🌸</div>
+    <div class="emoji-set bottom-left">☁️ 🌸 🐻</div>
+    <div class="emoji-set bottom-right">🌸 ☁️ 🐻</div>
 
-</html>
+    <!-- МЕНЮ -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Басты бет</a></li>
+                <li><a href="#products">Өнімдер</a></li>
+                <li><a href="#contact">Байланыс</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- order.html -->
-<!DOCTYPE html>
-<html lang="kk">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Заказ беру</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    label { display:block; margin-top:15px; font-size:18px; }
-    input, select { padding:10px; width:100%; max-width:400px; margin-top:5px; }
-    .hidden { display:none; }
-    button { margin-top:20px; padding:12px 25px; background:#ff6fb7; border:none; color:white; font-size:18px; border-radius:10px; }
-  </style>
-</head>
-<body>
-  <h1>Заказ беру</h1>
-  <form>
-    <label>Аты-жөніңіз:
-      <input type="text" required />
-    </label>
+    <main>
+        <!-- Главная -->
+        <section id="home">
+            <h2>HUGGY TOYS</h2>
+            <p>
+                Біздің дүкенде сіз барлық жастағы адамдарға арналған жұмсақ ойыншықтарды таба аласыз. 
+                Біз әр түрлі сапалы, әдемі және қауіпсіз ойыншықтар ұсынамыз, олар балаларға қуаныш 
+                сыйлайды және үйге жылулық пен жайлылық қосады. Әрбір ойыншық — махаббатпен және 
+                ерекше көңілмен жасалған!
+            </p>
+        </section>
 
-    <label>Телефон нөміріңіз:
-      <input type="text" required />
-    </label>
+        <!-- Категории -->
+        <section id="products">
+            <h2 class="center">Өнімдер</h2>
 
-    <label>Қалай аласыз?
-      <select id="delivery-select">
-        <option value="self">Самовывоз</option>
-        <option value="del">Доставка</option>
-      </select>
-    </label>
+            <div class="categories">
+                <div class="category" onclick="showCategoryInfo('multy')">Мультфильм кейіпкерлері</div>
+                <div class="category" onclick="showCategoryInfo('anime')">Аниме кейіпкерлері</div>
+                <div class="category" onclick="showCategoryInfo('films')">Фильмдер бойынша</div>
+                <div class="category" onclick="showCategoryInfo('our')">Біздің дизайндар</div>
+                <div class="category" onclick="showCategoryInfo('classic')">Классикалық ойыншықтар</div>
+                <div class="category" onclick="showCategoryInfo('animals')">Жануарлар</div>
+            </div>
 
-    <label id="address-label" class="hidden">Мекенжайыңыз:
-      <input type="text" />
-    </label>
+            <div class="category-info" id="categoryInfo">
+                Мәзірден категорияны таңдаңыз, ақпарат осы жерде шығады.
+            </div>
+        </section>
 
-    <p id="delivery-info" class="hidden" style="margin-top:15px; font-size:18px;">Ойыншығыңыз 5–10 күн ішінде келеді.</p>
+        <!-- Контакты -->
+        <section id="contact">
+            <h2 class="center">Байланыс</h2>
+            <p class="center">Телефон: +7 771 777 9450</p>
+            <p class="center">Мекен-жай: Сатпаева 52, Астана</p>
+        </section>
+    </main>
 
-    <button type="submit">Жіберу</button>
-  </form>
+    <footer>
+        Фирма Huggy Toys © 2025
+    </footer>
 
-  <script>
-    const select = document.getElementById('delivery-select');
-    const addr = document.getElementById('address-label');
-    const info = document.getElementById('delivery-info');
+    <!-- JAVASCRIPT -->
+    <script>
+        // Показ окна при загрузке
+        window.onload = function () {
+            document.getElementById("popup").style.display = "block";
+        };
 
-    select.addEventListener('change', () => {
-      if (select.value === 'del') {
-        addr.classList.remove('hidden');
-        info.classList.remove('hidden');
-      } else {
-        addr.classList.add('hidden');
-        info.classList.add('hidden');
-      }
-    });
-  </script>
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
+        function showCategoryInfo(category) {
+            const info = document.getElementById('categoryInfo');
+
+            const texts = {
+                multy: '<b>Мультфильм кейіпкерлері:</b> Disney, Смешарики және басқа сүйікті кейіпкерлер. 🌸',
+                anime: '<b>Аниме кейіпкерлері:</b> Naruto, Pokemon және тағы басқалары. 🐻',
+                films: '<b>Фильмдер бойынша:</b> Marvel, Star Wars және фильм кейіпкерлері. ☁️',
+                our: '<b>Біздің дизайндар:</b> Өзіміз жасаған ерекше ойыншықтар. 🌸',
+                classic: '<b>Классикалық ойыншықтар:</b> Традициялық жұмсақ ойыншықтар. 🐻',
+                animals: '<b>Жануарлар:</b> Түрлі көлемдегі жануарлар. ☁️'
+            };
+
+            info.innerHTML = texts[category] || 'Мәзірден категорияны таңдаңыз.';
+        }
+    </script>
+
 </body>
-</html></body>
 </html>

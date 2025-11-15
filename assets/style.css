@@ -1,65 +1,151 @@
-/* Стиль для смайликов */
-.smiley {
-    position: fixed;
-    font-size: 3rem; /* Размер смайлика */
-    z-index: 999;
-}
-
-.smiley.flower {
-    top: 10px;
-    left: 10px; /* Цветок в левом верхнем углу */
-}
-
-.smiley.bear {
-    top: 10px;
-    right: 10px; /* Медвежонок в правом верхнем углу */
-}
-
-.smiley.cloud {
-    bottom: 10px;
-    left: 10px; /* Облако в левом нижнем углу */
-}
-
-/* Дополнительные стили для сайта */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f7f4f2; /* Молочный фон */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fffaf0;
+    scroll-behavior: smooth;
+}
+
+/* ---- ВСПЛЫВАЮЩЕЕ ОКНО ---- */
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #cce8ff;
+    padding: 30px 40px;
+    border: 3px solid #1e90ff;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+    z-index: 10000;
+}
+
+#popup button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: white;
+    border: 2px solid #1e90ff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* ---- ЭМОДЗИ УГЛЫ ---- */
+.emoji-set {
+    position: fixed;
+    font-size: 1.7em;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 2000;
+}
+
+.top-left { top: 10px; left: 10px; }
+.top-right { top: 10px; right: 10px; }
+.bottom-left { bottom: 40px; left: 10px; }
+.bottom-right { bottom: 40px; right: 10px; }
+
+/* ---- МЕНЮ ---- */
+header {
+    background: white;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header nav ul {
     margin: 0;
     padding: 0;
-}
-
-header {
-    background-color: #f5c6c0; /* Пастельный розовый для шапки */
-    padding: 20px;
-    text-align: center;
-}
-
-nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
     list-style: none;
-    padding: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
+header nav ul li a {
     text-decoration: none;
-    color: #fff;
-    font-size: 1.2rem;
+    padding: 10px 18px;
+    background: #cce8ff;
+    border: 2px solid #87cefa;
+    border-radius: 6px;
+    color: #333;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-h1, h2 {
-    color: #6c757d; /* Темно-серый для заголовков */
+header nav ul li a:hover {
+    background: #b2dbff;
 }
 
-footer {
-    background-color: #f5c6c0;
-    padding: 10px;
+/* ---- ОСНОВНОЙ КОНТЕНТ ---- */
+
+main {
+    padding: 30px 20px;
+}
+
+#home h2 {
+    font-size: 2.3em;
+    font-weight: 900;
     text-align: center;
-    font-size: 0.8rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    color: #6a5acd;
+}
+
+#home p {
+    text-align: center;
+    font-size: 1.15em;
+    max-width: 850px;
+    margin: 15px auto;
+}
+
+.center {
+    text-align: center;
+}
+
+/* ---- КАТЕГОРИИ ---- */
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.category {
+    background: #e2f3ff;
+    border: 2px solid #9cd0ff;
+    padding: 18px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    min-width: 160px;
+    flex: 1 1 calc(30% - 20px);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.category:hover {
+    background: #d7e7ff;
+    border-color: #7bbcff;
+}
+
+.category-info {
+    margin-top: 25px;
+    padding: 20px;
+    border: 2px solid #ffa07a;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* ---- ФУТЕР ---- */
+footer {
+    background: #fef7ff;
+    border: 2px solid #e6c6ff;
+    border-radius: 12px;
+    width: 90%;
+    padding: 20px;
+    margin: 40px auto;
+    text-align: center;
 }
