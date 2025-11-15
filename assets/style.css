@@ -1,0 +1,65 @@
+/* Стиль для смайликов */
+.smiley {
+    position: fixed;
+    font-size: 3rem; /* Размер смайлика */
+    z-index: 999;
+}
+
+.smiley.flower {
+    top: 10px;
+    left: 10px; /* Цветок в левом верхнем углу */
+}
+
+.smiley.bear {
+    top: 10px;
+    right: 10px; /* Медвежонок в правом верхнем углу */
+}
+
+.smiley.cloud {
+    bottom: 10px;
+    left: 10px; /* Облако в левом нижнем углу */
+}
+
+/* Дополнительные стили для сайта */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f4f2; /* Молочный фон */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f5c6c0; /* Пастельный розовый для шапки */
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+h1, h2 {
+    color: #6c757d; /* Темно-серый для заголовков */
+}
+
+footer {
+    background-color: #f5c6c0;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.8rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

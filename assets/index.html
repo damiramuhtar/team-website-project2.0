@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Huggy Toys</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #f8b4d9; padding: 20px; text-align: center; }
+    nav { background: #ffd8ec; padding: 10px; text-align: center; }
+    nav a { margin: 0 15px; text-decoration: none; font-weight: bold; }
+    .hero { text-align: center; padding: 20px; }
+    .products img { width: 150px; margin: 10px; border-radius: 10px; }
+    .order-btn { display: inline-block; padding: 12px 20px; background: #ff6fb7; color: white; border-radius: 10px; text-decoration: none; font-size: 18px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Huggy Toys</h1>
+    <p>Ойыншық дүкені</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Басты бет</a>
+    <a href="order.html">Заказ беру</a>
+    <a href="contacts.html">Контактілер</a>
+  </nav>
+
+  <section class="categories" style="text-align:center; padding:20px;">
+    <h2>Ойыншық категориялары</h2>
+    <div style="display:flex; justify-content:center; gap:20px; margin-top:20px;">
+      <a href="kids-small.html" class="cat" style="padding:15px 25px; background:#ffe3f4; border-radius:12px; text-decoration:none; font-size:18px;">Кішкентай балаларға</a>
+      <a href="kids-mid.html" class="cat" style="padding:15px 25px; background:#ffe3f4; border-radius:12px; text-decoration:none; font-size:18px;">Орта жастағыларға</a>
+      <a href="kids-big.html" class="cat" style="padding:15px 25px; background:#ffe3f4; border-radius:12px; text-decoration:none; font-size:18px;">Үлкен жастағы балаларға</a>
+    </div>
+  </section>
+
+  <section class="hero">
+    <h2>Біздегі ойыншықтар</h2>
+    <div class="products">
+      <img src="toy1.jpg" alt="Toy 1" />
+      <img src="toy2.jpg" alt="Toy 2" />
+      <img src="toy3.jpg" alt="Toy 3" />
+    </div>
+    <p>Біздің көмек: 8 747 3630 34 40, +7 705 557 9450 (Алия)</p>
+    <a class="order-btn" href="order.html">🛒 Заказ беру</a>
+  </section>
+
+</html>
+
+<!-- order.html -->
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Заказ беру</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    label { display:block; margin-top:15px; font-size:18px; }
+    input, select { padding:10px; width:100%; max-width:400px; margin-top:5px; }
+    .hidden { display:none; }
+    button { margin-top:20px; padding:12px 25px; background:#ff6fb7; border:none; color:white; font-size:18px; border-radius:10px; }
+  </style>
+</head>
+<body>
+  <h1>Заказ беру</h1>
+  <form>
+    <label>Аты-жөніңіз:
+      <input type="text" required />
+    </label>
+
+    <label>Телефон нөміріңіз:
+      <input type="text" required />
+    </label>
+
+    <label>Қалай аласыз?
+      <select id="delivery-select">
+        <option value="self">Самовывоз</option>
+        <option value="del">Доставка</option>
+      </select>
+    </label>
+
+    <label id="address-label" class="hidden">Мекенжайыңыз:
+      <input type="text" />
+    </label>
+
+    <p id="delivery-info" class="hidden" style="margin-top:15px; font-size:18px;">Ойыншығыңыз 5–10 күн ішінде келеді.</p>
+
+    <button type="submit">Жіберу</button>
+  </form>
+
+  <script>
+    const select = document.getElementById('delivery-select');
+    const addr = document.getElementById('address-label');
+    const info = document.getElementById('delivery-info');
+
+    select.addEventListener('change', () => {
+      if (select.value === 'del') {
+        addr.classList.remove('hidden');
+        info.classList.remove('hidden');
+      } else {
+        addr.classList.add('hidden');
+        info.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html></body>
+</html>
