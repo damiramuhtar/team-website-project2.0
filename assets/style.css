@@ -1,109 +1,87 @@
-/* Навигация батырмаларын үлкен, жауап беретін және эмодзи қосылған етіп жасау */
-nav {
-    display: flex;
-    flex-wrap: wrap; /* мобильдіде қатардан төменге түссін */
-    justify-content: center;
-    background: #ffd6e0;
-    position: sticky;
-    top: 100px;
-    z-index: 9;
+/* Корзина стильдері */
+.cart {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    width: 280px;
+    background: #fff1a8;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    max-height: 400px;
+    overflow-y: auto;
+    z-index: 100;
+    display: none;
+    transition: all 0.3s ease;
 }
 
-nav button {
-    padding: 18px 28px;  /* үлкенірек батырмалар */
-    margin: 8px;
-    border: none;
+.cart h3 {
+    text-align: center;
+    margin-top: 0;
+    font-size: 22px;
+    color: #ff6f91;
+}
+
+.cart ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px dashed #a2d2ff;
+    font-size: 16px;
+    color: #333;
+}
+
+.cart button {
+    margin-top: 10px;
+    width: 100%;
     background-color: #a2d2ff;
     color: #fff;
-    font-size: 18px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
     cursor: pointer;
-    border-radius: 15px;
     transition: 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px; /* эмодзи мен мәтіннің арасы */
 }
 
-nav button:hover {
-    background-color: #ffb3c1;
-}
-
-nav button.active {
+.cart button:hover {
     background-color: #ff6f91;
 }
 
-/* Скролл батырмаларын жақсарту */
-.scroll-btn {
-    position: fixed;
-    right: 20px;
-    background: #ffb3c1;
-    color: #fff;
-    border: none;
-    padding: 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 22px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: transform 0.2s, background 0.3s;
-    z-index: 100;
+/* Тауарларды сатып алу батырмасы */
+.toy-list li button {
+    background-color: #a2d2ff;
+    border-radius: 12px;
+    padding: 8px 14px;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-.scroll-btn:hover {
-    transform: scale(1.1);
-    background: #ff6f91;
+.toy-list li button:hover {
+    background-color: #ff6f91;
 }
 
-/* Бөлім тақырыптарын безендіру */
-.toy-category h2 {
-    color: #ff6f91;
-    border-bottom: 3px dashed #a2d2ff;
-    padding-bottom: 10px;
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-/* Лист элементтерін стильдеу */
-ul.toy-list li {
-    background: #f0f8ff;
-    margin: 12px 0;
-    padding: 15px 20px;
-    border-radius: 15px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.3s;
-}
-
-ul.toy-list li:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-/* Footer стилі */
-footer {
-    text-align: center;
-    background: #ffd6e0;
-    padding: 20px 10px;
-    font-size: 20px;
-    color: #333;
+/* Жалпы сома */
+#totalPrice {
     font-weight: bold;
+    font-size: 18px;
+    margin-top: 15px;
+    color: #0077b6;
 }
 
-/* Мобильді экрандарға жауап беру */
+/* Корзина мен навигацияны мобильді ету */
 @media (max-width: 768px) {
-    header {
-        font-size: 40px;
-    }
     nav button {
         font-size: 16px;
         padding: 12px 18px;
+        margin: 5px;
+    }
+    .cart {
+        width: 90%;
+        right: 5%;
     }
     .toy-category h2 {
         font-size: 24px;
     }
-    .order-form input, .order-form select {
-        font-size: 14px;
-    }
-    .order-form button {
-        font-size: 16px;
-        padding: 10px 20px;
-    }
 }
+
