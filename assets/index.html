@@ -26,6 +26,7 @@
         }
         nav {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             background: #ffd6e0;
             position: sticky;
@@ -33,15 +34,18 @@
             z-index: 9;
         }
         nav button {
-            padding: 15px 25px;
-            margin: 5px;
+            padding: 18px 28px;
+            margin: 8px;
             border: none;
             background-color: #a2d2ff;
             color: #fff;
-            font-size: 16px;
+            font-size: 18px;
             cursor: pointer;
-            border-radius: 12px 12px 0 0;
+            border-radius: 15px;
             transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         nav button:hover {
             background-color: #ffb3c1;
@@ -61,8 +65,10 @@
         }
         .toy-category h2 {
             color: #ff6f91;
-            border-bottom: 2px dashed #a2d2ff;
-            padding-bottom: 5px;
+            border-bottom: 3px dashed #a2d2ff;
+            padding-bottom: 10px;
+            font-size: 28px;
+            margin-bottom: 15px;
         }
         ul.toy-list {
             list-style: none;
@@ -70,50 +76,64 @@
         }
         ul.toy-list li {
             background: #f0f8ff;
-            margin: 10px 0;
-            padding: 12px 20px;
+            margin: 12px 0;
+            padding: 15px 20px;
             border-radius: 15px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        ul.toy-list li h3 {
-            margin: 0 0 5px 0;
-            color: #0077b6;
-        }
-        ul.toy-list li p {
-            margin: 0 0 5px 0;
-            font-size: 14px;
-            color: #555;
-        }
-        ul.toy-list li span {
-            font-weight: bold;
-            color: #ff3c38;
-        }
-        .order-form {
-            max-width: 500px;
-            margin: 0 auto;
-            background: #fff1a8;
-            padding: 20px;
-            border-radius: 15px;
-        }
-        .order-form label {
-            display: block;
-            margin: 10px 0 5px;
-        }
-        .order-form input, .order-form select {
-            width: 100%;
-            padding: 10px;
-            border-radius: 10px;
-            border: 1px solid #ccc;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-        .order-form button {
-            background: #a2d2ff;
-            color: white;
-            padding: 12px 25px;
+        ul.toy-list li button {
+            padding: 8px 12px;
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            font-size: 18px;
+            background-color: #a2d2ff;
+            color: #fff;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        ul.toy-list li button:hover {
+            background-color: #ff6f91;
+        }
+        .cart {
+            position: fixed;
+            top: 150px;
+            right: 20px;
+            background: #ffd6e0;
+            padding: 15px;
+            border-radius: 15px;
+            width: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+            display: none;
+            z-index: 100;
+        }
+        .cart h3 {
+            margin-top: 0;
+            font-size: 20px;
+        }
+        .cart ul {
+            list-style: none;
+            padding: 0;
+        }
+        .cart ul li {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px dashed #a2d2ff;
+        }
+        .cart button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #a2d2ff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
         }
         .scroll-btn {
             position: fixed;
@@ -121,11 +141,12 @@
             background: #ffb3c1;
             color: #fff;
             border: none;
-            padding: 10px;
+            padding: 15px;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 20px;
-            margin: 5px;
+            font-size: 22px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background 0.3s;
             z-index: 100;
         }
         #scrollTop { bottom: 70px; }
@@ -133,11 +154,10 @@
         footer {
             text-align: center;
             background: #ffd6e0;
-            padding: 15px 10px;
-            font-size: 18px;
+            padding: 20px 10px;
+            font-size: 20px;
             color: #333;
-            position: sticky;
-            bottom: 0;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -155,35 +175,14 @@
     <button class="tab-btn" data-tab="order">🛒 Тапсырыс беру</button>
 </nav>
 
+<!-- Тауарлар -->
 <section id="babies" class="active">
     <div class="toy-category">
         <h2>Балаларға арналған ойыншықтар (0-3 жас)</h2>
         <ul class="toy-list">
-            <li>
-                <h3>🧸 Мягкая плюшевая игрушка</h3>
-                <p>Жұмсақ плюштан жасалған, кішкентай балаларға қауіпсіз</p>
-                <span>1200₸</span>
-            </li>
-            <li>
-                <h3>🔔 Погремушка</h3>
-                <p>Қолға ұстауға ыңғайлы, дыбыс шығаратын</p>
-                <span>800₸</span>
-            </li>
-            <li>
-                <h3>✨ Светящийся мячик</h3>
-                <p>Жарық шығаратын, доп ойындарына арналған</p>
-                <span>1500₸</span>
-            </li>
-            <li>
-                <h3>🟩 Развивающий кубик</h3>
-                <p>Түстер мен фигураларды үйрететін кубик</p>
-                <span>1100₸</span>
-            </li>
-            <li>
-                <h3>🎵 Музыкальная игрушка</h3>
-                <p>Баланың музыкалық қабілетін дамытатын</p>
-                <span>1300₸</span>
-            </li>
+            <li data-name="Мягкая плюшевая игрушка" data-price="1200">🧸 Мягкая плюшевая игрушка <span>1200₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Погремушка" data-price="800">🔔 Погремушка <span>800₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Светящийся мячик" data-price="1500">✨ Светящийся мячик <span>1500₸</span> <button>➕ Сатып алу</button></li>
         </ul>
     </div>
 </section>
@@ -192,31 +191,8 @@
     <div class="toy-category">
         <h2>Орта жастағы балаларға (4-7 жас)</h2>
         <ul class="toy-list">
-            <li>
-                <h3>🧱 Конструктор LEGO Duplo</h3>
-                <p>Түсін үйрететін, шығармашылықты дамытатын</p>
-                <span>3500₸</span>
-            </li>
-            <li>
-                <h3>🎲 Настольная игра</h3>
-                <p>Отбасылық ойын, логика мен стратегияны дамытады</p>
-                <span>2500₸</span>
-            </li>
-            <li>
-                <h3>🤖 Робот-трансформер</h3>
-                <p>Қолмен жинауға болатын робот</p>
-                <span>4500₸</span>
-            </li>
-            <li>
-                <h3>🪆 Кукла с аксессуарами</h3>
-                <p>Әдемі кукла, киімдерін ауыстыруға болады</p>
-                <span>3200₸</span>
-            </li>
-            <li>
-                <h3>🧩 Пазл 3D</h3>
-                <p>Үлкен бөліктері бар 3D пазл</p>
-                <span>3000₸</span>
-            </li>
+            <li data-name="Конструктор LEGO Duplo" data-price="3500">🧱 Конструктор LEGO Duplo <span>3500₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Настольная игра" data-price="2500">🎲 Настольная игра <span>2500₸</span> <button>➕ Сатып алу</button></li>
         </ul>
     </div>
 </section>
@@ -225,31 +201,8 @@
     <div class="toy-category">
         <h2>Үлкен балаларға / Күрделі ойыншықтар (8+)</h2>
         <ul class="toy-list">
-            <li>
-                <h3>🧩 3D пазл</h3>
-                <p>Күрделі 3D фигураларды жинау</p>
-                <span>5200₸</span>
-            </li>
-            <li>
-                <h3>🤖 Механикалық робот жинағы</h3>
-                <p>Механикалық бөліктерді өзіңіз жинайсыз</p>
-                <span>6700₸</span>
-            </li>
-            <li>
-                <h3>💡 Электрондық конструктор</h3>
-                <p>Жарық пен қозғалысқа арналған электроника</p>
-                <span>8000₸</span>
-            </li>
-            <li>
-                <h3>🧠 Логикалық ойын жинағы</h3>
-                <p>Стратегия мен логиканы дамытатын ойын</p>
-                <span>5600₸</span>
-            </li>
-            <li>
-                <h3>🔬 Научный набор</h3>
-                <p>Балаларға арналған химия және физика тәжірибелері</p>
-                <span>7200₸</span>
-            </li>
+            <li data-name="3D пазл" data-price="5200">🧩 3D пазл <span>5200₸</span> <button>➕ Сатып алу</button></li>
+            <li data-name="Механикалық робот жинағы" data-price="6700">🤖 Механикалық робот жинағы <span>6700₸</span> <button>➕ Сатып алу</button></li>
         </ul>
     </div>
 </section>
@@ -263,13 +216,18 @@
         <label>Мекен-жайыңыз:</label>
         <input type="text" id="address" placeholder="Мекен-жай">
         
-        <label>Сатып алынған ойыншық сомасы (₸):</label>
-        <input type="number" id="price" placeholder="Мысалы, 4000">
-        
-        <p id="deliveryCost">Жеткізу бағасы: </p>
-        <button onclick="calculateDelivery()">Есептеу</button>
+        <p id="totalPrice">Жалпы сома: 0₸</p>
+        <button onclick="alert('Сіздің тапсырысыңыз қабылданды!')">Тапсырыс беру</button>
     </div>
 </section>
+
+<!-- Корзина -->
+<div class="cart" id="cart">
+    <h3>🛒 Корзина</h3>
+    <ul id="cartItems"></ul>
+    <p id="cartTotal">Жалпы: 0₸</p>
+    <button onclick="toggleCart()">Жабу</button>
+</div>
 
 <button class="scroll-btn" id="scrollTop" onclick="scrollToTop()">↑</button>
 <button class="scroll-btn" id="scrollBottom" onclick="scrollToBottom()">↓</button>
@@ -279,38 +237,61 @@
 </footer>
 
 <script>
-    const tabs = document.querySelectorAll('.tab-btn');
-    const sections = document.querySelectorAll('section');
+const tabs = document.querySelectorAll('.tab-btn');
+const sections = document.querySelectorAll('section');
 
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            const target = tab.dataset.tab;
-            sections.forEach(sec => sec.classList.remove('active'));
-            document.getElementById(target).classList.add('active');
-        });
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const target = tab.dataset.tab;
+        sections.forEach(sec => sec.classList.remove('active'));
+        document.getElementById(target).classList.add('active');
     });
+});
 
-    function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function scrollToBottom() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
 
-    function scrollToBottom() {
-        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-    }
+// Корзина логикасы
+let cart = [];
+function updateCart() {
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    cartItems.innerHTML = '';
+    let total = 0;
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - ${item.price}₸`;
+        cartItems.appendChild(li);
+        total += item.price;
+    });
+    cartTotal.textContent = `Жалпы: ${total}₸`;
+    document.getElementById('totalPrice').textContent = `Жалпы сома: ${total}₸`;
+}
 
-    function calculateDelivery() {
-        const price = Number(document.getElementById('price').value);
-        let delivery = 0;
-        if (price < 5000) delivery = 1200;
-        else delivery = 700;
-        document.getElementById('deliveryCost').textContent = "Жеткізу бағасы: " + delivery + "₸";
-    }
+function toggleCart() {
+    const cartDiv = document.getElementById('cart');
+    cartDiv.style.display = cartDiv.style.display === 'block' ? 'none' : 'block';
+}
 
-    // Автоматты есептеу енгізген сайын
-    document.getElementById('price').addEventListener('input', calculateDelivery);
+// Тауарларды сатып алу
+document.querySelectorAll('.toy-list li button').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const li = e.target.parentElement;
+        const name = li.dataset.name;
+        const price = parseInt(li.dataset.price);
+        cart.push({name, price});
+        updateCart();
+        document.getElementById('cart').style.display = 'block';
+    });
+});
 </script>
 
 </body>
 </html>
+
